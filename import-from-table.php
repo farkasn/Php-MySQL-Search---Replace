@@ -34,13 +34,11 @@ foreach ($result->fetchAll() as $row){
 	$result2 = $db->prepare($sql);
 	$result2->execute();
 	if ($result2->rowCount() > 0){
-		$db->query("UPDATE ".$destintable." SET $destinreplacefield='$row[$sourcereplacefield]' WHERE $destincomparefield = '$row[$sourcecomparefield]");
+		$db->query("UPDATE ".$destintable." SET $destinreplacefield='$row[$sourcereplacefield]' WHERE $destincomparefield = '$row[$sourcecomparefield]'");
 		echo "<br>$row[$sourcecomparefield] => $row[$sourcereplacefield]";
 		$i++;
 	}
-	
+
 }
 echo "<br>$i Replacements";
 ?>
-   
- 
